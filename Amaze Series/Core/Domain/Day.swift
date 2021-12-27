@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum Day {
+enum Day: String, Decodable {
     case monday, tuesday, wednesday, thursday, friday, saturday, sunday
 }
