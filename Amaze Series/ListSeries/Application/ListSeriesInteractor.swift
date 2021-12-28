@@ -7,16 +7,6 @@
 
 import Foundation
 
-protocol ListSeriesInteractorDelegate: AnyObject {
-    func onUpdate(state: ListSeriesState)
-}
-
-protocol ListSeriesInteractorType {
-    var interactorDelegate: ListSeriesInteractorDelegate? { get set }
-
-    func getNextSeriesPage() async
-}
-
 class ListSeriesInteractor {
     private let repository: ListSeriesRepositoryProtocol
     private var page = 0

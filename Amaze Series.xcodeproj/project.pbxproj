@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8983E3F277A36AF00411B6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E3E277A36AF00411B6E /* AppDelegate.swift */; };
-		E8983E41277A36AF00411B6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E40277A36AF00411B6E /* SceneDelegate.swift */; };
-		E8983E43277A36AF00411B6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E42277A36AF00411B6E /* ViewController.swift */; };
-		E8983E46277A36B000411B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E44277A36B000411B6E /* Main.storyboard */; };
+		E8983E43277A36AF00411B6E /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E42277A36AF00411B6E /* AppViewController.swift */; };
 		E8983E48277A36B400411B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8983E47277A36B400411B6E /* Assets.xcassets */; };
 		E8983E4B277A36B400411B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E49277A36B400411B6E /* LaunchScreen.storyboard */; };
 		E8983E55277A379000411B6E /* ListSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E54277A379000411B6E /* ListSeriesRepository.swift */; };
@@ -32,6 +30,12 @@
 		E8983E9B277B547800411B6E /* ListSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E9A277B522600411B6E /* ListSeries.json */; };
 		E8983E9E277B5B3A00411B6E /* ListSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */; };
 		E8983EA0277B668D00411B6E /* ListSeriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E9F277B668D00411B6E /* ListSeriesState.swift */; };
+		E8983EA3277B681E00411B6E /* ListSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */; };
+		E8983EA5277B68AB00411B6E /* ListSeriesInteractorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA4277B68AB00411B6E /* ListSeriesInteractorProtocols.swift */; };
+		E8983EA7277B69F500411B6E /* ListSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */; };
+		E8983EA9277B7BAF00411B6E /* SeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */; };
+		E8983EAC277B7E3000411B6E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EAB277B7E3000411B6E /* AppRouter.swift */; };
+		E8983EB0277B80E300411B6E /* ListSeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EAF277B80E300411B6E /* ListSeriesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +51,7 @@
 /* Begin PBXFileReference section */
 		E8983E3B277A36AF00411B6E /* Amaze Series.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amaze Series.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8983E3E277A36AF00411B6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8983E40277A36AF00411B6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E8983E42277A36AF00411B6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E8983E45277A36B000411B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8983E42277A36AF00411B6E /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		E8983E47277A36B400411B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8983E4A277A36B400411B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8983E4C277A36B400411B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +73,12 @@
 		E8983E9A277B522600411B6E /* ListSeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ListSeries.json; path = AmazeSeriesTests/Core/Domain/RawData/ListSeries.json; sourceTree = SOURCE_ROOT; };
 		E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesInteractor.swift; sourceTree = "<group>"; };
 		E8983E9F277B668D00411B6E /* ListSeriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesState.swift; sourceTree = "<group>"; };
+		E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesPresenter.swift; sourceTree = "<group>"; };
+		E8983EA4277B68AB00411B6E /* ListSeriesInteractorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesInteractorProtocols.swift; sourceTree = "<group>"; };
+		E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesViewController.swift; sourceTree = "<group>"; };
+		E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableViewCell.swift; sourceTree = "<group>"; };
+		E8983EAB277B7E3000411B6E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		E8983EAF277B80E300411B6E /* ListSeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,15 +122,11 @@
 		E8983E3D277A36AF00411B6E /* Amaze Series */ = {
 			isa = PBXGroup;
 			children = (
+				E8983EB2277B877400411B6E /* Assets */,
+				E8983EB1277B875D00411B6E /* Configurations */,
+				E8983EAA277B7E1700411B6E /* App */,
 				E8983E58277A396C00411B6E /* Core */,
 				E8983E52277A36E500411B6E /* ListSeries */,
-				E8983E3E277A36AF00411B6E /* AppDelegate.swift */,
-				E8983E40277A36AF00411B6E /* SceneDelegate.swift */,
-				E8983E42277A36AF00411B6E /* ViewController.swift */,
-				E8983E44277A36B000411B6E /* Main.storyboard */,
-				E8983E47277A36B400411B6E /* Assets.xcassets */,
-				E8983E49277A36B400411B6E /* LaunchScreen.storyboard */,
-				E8983E4C277A36B400411B6E /* Info.plist */,
 			);
 			path = "Amaze Series";
 			sourceTree = "<group>";
@@ -130,6 +134,7 @@
 		E8983E52277A36E500411B6E /* ListSeries */ = {
 			isa = PBXGroup;
 			children = (
+				E8983EA1277B680E00411B6E /* Presentation */,
 				E8983E9C277B5AC200411B6E /* Application */,
 				E8983E53277A372A00411B6E /* Infrastructure */,
 			);
@@ -241,8 +246,63 @@
 			children = (
 				E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */,
 				E8983E9F277B668D00411B6E /* ListSeriesState.swift */,
+				E8983EA4277B68AB00411B6E /* ListSeriesInteractorProtocols.swift */,
+				E8983EAF277B80E300411B6E /* ListSeriesRouter.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E8983EA1277B680E00411B6E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */,
+				E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */,
+				E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E8983EAA277B7E1700411B6E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E8983EAE277B7E6C00411B6E /* Presentation */,
+				E8983EAD277B7E5A00411B6E /* Application */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E8983EAD277B7E5A00411B6E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E3E277A36AF00411B6E /* AppDelegate.swift */,
+				E8983EAB277B7E3000411B6E /* AppRouter.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E8983EAE277B7E6C00411B6E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E42277A36AF00411B6E /* AppViewController.swift */,
+				E8983E49277A36B400411B6E /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E8983EB1277B875D00411B6E /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E4C277A36B400411B6E /* Info.plist */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		E8983EB2277B877400411B6E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E47277A36B400411B6E /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +396,6 @@
 			files = (
 				E8983E4B277A36B400411B6E /* LaunchScreen.storyboard in Resources */,
 				E8983E48277A36B400411B6E /* Assets.xcassets in Resources */,
-				E8983E46277A36B000411B6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,20 +416,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8983E75277A4CAB00411B6E /* RemoteResponse.swift in Sources */,
+				E8983EA3277B681E00411B6E /* ListSeriesPresenter.swift in Sources */,
 				E8983E9E277B5B3A00411B6E /* ListSeriesInteractor.swift in Sources */,
 				E8983E66277A3C2000411B6E /* Image.swift in Sources */,
 				E8983E55277A379000411B6E /* ListSeriesRepository.swift in Sources */,
 				E8983E6E277A416A00411B6E /* SeriesEpisode.swift in Sources */,
+				E8983EB0277B80E300411B6E /* ListSeriesRouter.swift in Sources */,
 				E8983E68277A3CCC00411B6E /* SeriesSchedule.swift in Sources */,
 				E8983E70277A435300411B6E /* Day.swift in Sources */,
+				E8983EAC277B7E3000411B6E /* AppRouter.swift in Sources */,
 				E8983E72277A437A00411B6E /* Time.swift in Sources */,
-				E8983E43277A36AF00411B6E /* ViewController.swift in Sources */,
+				E8983E43277A36AF00411B6E /* AppViewController.swift in Sources */,
 				E8983E3F277A36AF00411B6E /* AppDelegate.swift in Sources */,
 				E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */,
-				E8983E41277A36AF00411B6E /* SceneDelegate.swift in Sources */,
 				E8983E64277A3BC700411B6E /* Series.swift in Sources */,
 				E8983EA0277B668D00411B6E /* ListSeriesState.swift in Sources */,
+				E8983EA9277B7BAF00411B6E /* SeriesTableViewCell.swift in Sources */,
+				E8983EA5277B68AB00411B6E /* ListSeriesInteractorProtocols.swift in Sources */,
 				E8983E6A277A3F4600411B6E /* Genre.swift in Sources */,
+				E8983EA7277B69F500411B6E /* ListSeriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +459,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E8983E44277A36B000411B6E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8983E45277A36B000411B6E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E8983E49277A36B400411B6E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -543,7 +599,6 @@
 				INFOPLIST_FILE = "Amaze Series/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,7 +627,6 @@
 				INFOPLIST_FILE = "Amaze Series/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
