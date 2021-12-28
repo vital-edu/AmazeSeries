@@ -9,6 +9,7 @@ import Foundation
 
 protocol ListSeriesPresenterType {
     func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType)
+    func loadNextPage()
 }
 
 class ListSeriesPresenter {
@@ -24,6 +25,12 @@ class ListSeriesPresenter {
 extension ListSeriesPresenter: ListSeriesPresenterType {
     func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType) {
         self.listSeriesView = listSeriesView
+        Task(priority: .medium) {
+            await self.interactor.getNextSeriesPage()
+        }
+    }
+
+    func loadNextPage() {
         Task(priority: .medium) {
             await self.interactor.getNextSeriesPage()
         }

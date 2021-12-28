@@ -30,6 +30,7 @@ extension ListSeriesInteractor: ListSeriesInteractorType {
         let result = await repository.get(page: page)
         switch result {
         case .success(let series):
+            page += 1
             self.state = .loadSuccess(series: state.series + series)
         case .failure(let errorDescription, _, _):
             self.state = .hasFailure(series: state.series, message: errorDescription)

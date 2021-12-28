@@ -19,10 +19,12 @@ class ListSeriesViewController: UIViewController {
         static let sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         static let minimumLineSpacing = 5.0
         static let minimumInteritemSpacing = 5.0
+        static let remainingItensBeforeLoading = 10
     }
 
     var presenter: ListSeriesPresenterType
     private var dataSource: [Series]
+    private var canLoadNextPage = true
 
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -70,6 +72,7 @@ extension ListSeriesViewController: ListSeriesViewControllerType {
     func onSeriesFetched(series: [Series]) {
         dataSource = series
         collectionView.reloadData()
+        canLoadNextPage = true
     }
 }
 
@@ -110,5 +113,14 @@ extension ListSeriesViewController: UICollectionViewDataSource {
         cell.setup(with: dataSource[indexPath.row])
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard canLoadNextPage else { return }
+
+        if indexPath.item >= (dataSource.count - ViewMetrics.remainingItensBeforeLoading) {
+            canLoadNextPage = false
+            self.presenter.loadNextPage()
+        }
     }
 }
