@@ -36,6 +36,11 @@ class SeriesViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func configureViews() {
+        self.titleLabel.numberOfLines = 2
+        self.titleLabel.textAlignment = .center
+    }
+
     func setup(with model: Series) {
         posterImageView.kf.setImage(with: model.poster.mediumImageUrl)
         titleLabel.text = model.name
