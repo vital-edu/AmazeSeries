@@ -8,8 +8,8 @@
 import Foundation
 
 struct Poster {
-    let originalImageUrl: String
-    let mediumImageUrl: String
+    let originalImageUrl: URL
+    let mediumImageUrl: URL
 }
 
 extension Poster: Decodable {
@@ -20,7 +20,7 @@ extension Poster: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        originalImageUrl = try container.decode(String.self, forKey: .original)
-        mediumImageUrl = try container.decode(String.self, forKey: .medium)
+        originalImageUrl = try URL(string: container.decode(String.self, forKey: .original))!
+        mediumImageUrl = try URL(string: container.decode(String.self, forKey: .medium))!
     }
 }

@@ -13,14 +13,36 @@ protocol ListSeriesViewControllerType: AnyObject {
     func onSeriesFetched(series: [Series])
 }
 
-class ListSeriesViewController: UITableViewController {
+class ListSeriesViewController: UIViewController {
+    private struct ViewMetrics {
+        static let cellSize = CGSize(width: 170, height: 239)
+    }
+
     var presenter: ListSeriesPresenterType
     private var dataSource: [Series]
+
+    private lazy var collectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = ViewMetrics.cellSize
+        flowLayout.scrollDirection = .horizontal
+
+        let collectionView = UICollectionView(
+            frame: self.view.frame,
+            collectionViewLayout: flowLayout
+        )
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        return collectionView
+    }()
 
     init(presenter: ListSeriesPresenterType) {
         self.presenter = presenter
         self.dataSource = []
         super.init(nibName: nil, bundle: nil)
+
+        buildLayout()
     }
 
     required init?(coder: NSCoder) {
@@ -30,38 +52,58 @@ class ListSeriesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(
-            SeriesTableViewCell.self,
-            forCellReuseIdentifier: SeriesTableViewCell.identifier
+        collectionView.register(
+            SeriesViewCell.self,
+            forCellWithReuseIdentifier: SeriesViewCell.identifier
         )
 
         presenter.onListSeriesPresented(on: self)
-    }
-
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: SeriesTableViewCell.identifier,
-            for: indexPath
-        )
-
-        return cell
     }
 }
 
 extension ListSeriesViewController: ListSeriesViewControllerType {
     func onSeriesFetched(series: [Series]) {
         dataSource = series
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
+        collectionView.reloadData()
+    }
+}
+
+extension ListSeriesViewController: ViewConfiguration {
+    func buildViewHierarchy() {
+        self.view.addSubview(collectionView)
+    }
+
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant:  ViewMetrics.cellSize.height),
+        ])
+    }
+}
+
+extension ListSeriesViewController: UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+}
+
+extension ListSeriesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: SeriesViewCell.identifier,
+            for: indexPath
+        ) as? SeriesViewCell else {
+            return UICollectionViewCell()
         }
+
+        cell.setup(with: dataSource[indexPath.row])
+
+        return cell
     }
 }

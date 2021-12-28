@@ -33,9 +33,11 @@
 		E8983EA3277B681E00411B6E /* ListSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */; };
 		E8983EA5277B68AB00411B6E /* ListSeriesInteractorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA4277B68AB00411B6E /* ListSeriesInteractorProtocols.swift */; };
 		E8983EA7277B69F500411B6E /* ListSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */; };
-		E8983EA9277B7BAF00411B6E /* SeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */; };
+		E8983EA9277B7BAF00411B6E /* SeriesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EA8277B7BAE00411B6E /* SeriesViewCell.swift */; };
 		E8983EAC277B7E3000411B6E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EAB277B7E3000411B6E /* AppRouter.swift */; };
 		E8983EB0277B80E300411B6E /* ListSeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EAF277B80E300411B6E /* ListSeriesRouter.swift */; };
+		E8983EB5277B89A400411B6E /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983EB4277B89A400411B6E /* ViewConfiguration.swift */; };
+		E8983EB8277B944E00411B6E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E8983EB7277B944E00411B6E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,9 +78,10 @@
 		E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesPresenter.swift; sourceTree = "<group>"; };
 		E8983EA4277B68AB00411B6E /* ListSeriesInteractorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesInteractorProtocols.swift; sourceTree = "<group>"; };
 		E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesViewController.swift; sourceTree = "<group>"; };
-		E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableViewCell.swift; sourceTree = "<group>"; };
+		E8983EA8277B7BAE00411B6E /* SeriesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewCell.swift; sourceTree = "<group>"; };
 		E8983EAB277B7E3000411B6E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		E8983EAF277B80E300411B6E /* ListSeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesRouter.swift; sourceTree = "<group>"; };
+		E8983EB4277B89A400411B6E /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8983EB8277B944E00411B6E /* Kingfisher in Frameworks */,
 				E8983E61277A3ADE00411B6E /* Alamofire in Frameworks */,
 				E8983E92277B4CFE00411B6E /* Mocker in Frameworks */,
 			);
@@ -122,8 +126,8 @@
 		E8983E3D277A36AF00411B6E /* Amaze Series */ = {
 			isa = PBXGroup;
 			children = (
+				E8983E4C277A36B400411B6E /* Info.plist */,
 				E8983EB2277B877400411B6E /* Assets */,
-				E8983EB1277B875D00411B6E /* Configurations */,
 				E8983EAA277B7E1700411B6E /* App */,
 				E8983E58277A396C00411B6E /* Core */,
 				E8983E52277A36E500411B6E /* ListSeries */,
@@ -153,6 +157,7 @@
 		E8983E58277A396C00411B6E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E8983EB3277B899100411B6E /* Presentation */,
 				E8983E73277A4C9200411B6E /* Infrastructure */,
 				E8983E62277A3B9300411B6E /* Domain */,
 			);
@@ -257,7 +262,7 @@
 			children = (
 				E8983EA2277B681E00411B6E /* ListSeriesPresenter.swift */,
 				E8983EA6277B69F500411B6E /* ListSeriesViewController.swift */,
-				E8983EA8277B7BAE00411B6E /* SeriesTableViewCell.swift */,
+				E8983EA8277B7BAE00411B6E /* SeriesViewCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -289,20 +294,20 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		E8983EB1277B875D00411B6E /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				E8983E4C277A36B400411B6E /* Info.plist */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
 		E8983EB2277B877400411B6E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				E8983E47277A36B400411B6E /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		E8983EB3277B899100411B6E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E8983EB4277B89A400411B6E /* ViewConfiguration.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +329,7 @@
 			packageProductDependencies = (
 				E8983E60277A3ADE00411B6E /* Alamofire */,
 				E8983E91277B4CFE00411B6E /* Mocker */,
+				E8983EB7277B944E00411B6E /* Kingfisher */,
 			);
 			productName = "Amaze Series";
 			productReference = E8983E3B277A36AF00411B6E /* Amaze Series.app */;
@@ -378,6 +384,7 @@
 			packageReferences = (
 				E8983E5F277A3ADE00411B6E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E8983E90277B4CFD00411B6E /* XCRemoteSwiftPackageReference "Mocker" */,
+				E8983EB6277B944E00411B6E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E8983E3C277A36AF00411B6E /* Products */;
 			projectDirPath = "";
@@ -427,11 +434,12 @@
 				E8983EAC277B7E3000411B6E /* AppRouter.swift in Sources */,
 				E8983E72277A437A00411B6E /* Time.swift in Sources */,
 				E8983E43277A36AF00411B6E /* AppViewController.swift in Sources */,
+				E8983EB5277B89A400411B6E /* ViewConfiguration.swift in Sources */,
 				E8983E3F277A36AF00411B6E /* AppDelegate.swift in Sources */,
 				E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */,
 				E8983E64277A3BC700411B6E /* Series.swift in Sources */,
 				E8983EA0277B668D00411B6E /* ListSeriesState.swift in Sources */,
-				E8983EA9277B7BAF00411B6E /* SeriesTableViewCell.swift in Sources */,
+				E8983EA9277B7BAF00411B6E /* SeriesViewCell.swift in Sources */,
 				E8983EA5277B68AB00411B6E /* ListSeriesInteractorProtocols.swift in Sources */,
 				E8983E6A277A3F4600411B6E /* Genre.swift in Sources */,
 				E8983EA7277B69F500411B6E /* ListSeriesViewController.swift in Sources */,
@@ -727,6 +735,14 @@
 				minimumVersion = 2.5.0;
 			};
 		};
+		E8983EB6277B944E00411B6E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher/";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -739,6 +755,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8983E90277B4CFD00411B6E /* XCRemoteSwiftPackageReference "Mocker" */;
 			productName = Mocker;
+		};
+		E8983EB7277B944E00411B6E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8983EB6277B944E00411B6E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
