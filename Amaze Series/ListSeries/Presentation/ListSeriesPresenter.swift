@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListSeriesPresenterType {
-    func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType) async
+    func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType)
 }
 
 class ListSeriesPresenter {
@@ -22,14 +22,18 @@ class ListSeriesPresenter {
 }
 
 extension ListSeriesPresenter: ListSeriesPresenterType {
-    func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType) async {
+    func onListSeriesPresented(on listSeriesView: ListSeriesViewControllerType) {
         self.listSeriesView = listSeriesView
-        await self.interactor.getNextSeriesPage()
+        Task(priority: .medium) {
+            await self.interactor.getNextSeriesPage()
+        }
     }
 }
 extension ListSeriesPresenter: ListSeriesInteractorDelegate {
     func onUpdate(state: ListSeriesState) {
         guard let listSeriesView = self.listSeriesView else { return }
-        listSeriesView.onSeriesFetched(series: state.series)
+        DispatchQueue.main.async {
+            listSeriesView.onSeriesFetched(series: state.series)
+        }
     }
 }

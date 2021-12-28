@@ -35,9 +35,7 @@ class ListSeriesViewController: UITableViewController {
             forCellReuseIdentifier: SeriesTableViewCell.identifier
         )
 
-        Task(priority: .medium) {
-            await presenter.onListSeriesPresented(on: self)
-        }
+        presenter.onListSeriesPresented(on: self)
     }
 
     // MARK: - Table view data source
