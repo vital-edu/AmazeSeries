@@ -1,5 +1,5 @@
 //
-//  ListSeriresRemoteServiceTests.swift
+//  ListSerirsRemoteServiceTests.swift
 //  AmazeSeriesTests
 //
 //  Created by Eduardo Vital Alencar Cunha on 28/12/2021.
@@ -10,7 +10,7 @@ import Mocker
 import Alamofire
 @testable import Amaze_Series
 
-class ListSeriresRemoteServiceTests: XCTestCase {
+class ListSerirsRemoteServiceTests: XCTestCase {
     func testGetSeries_when200_shoudlReturnListOfSeries() async throws {
         let configuration = URLSessionConfiguration.af.default
         configuration.protocolClasses = [MockingURLProtocol.self]
@@ -23,7 +23,7 @@ class ListSeriresRemoteServiceTests: XCTestCase {
         mock.register()
 
         let remoteService = ListSeriesRemoteService(session: sessionManager)
-        let result = try await remoteService.get(page: 0)
+        let result = await remoteService.get(page: 0)
 
         switch result {
         case .success(let series):
@@ -46,7 +46,7 @@ class ListSeriresRemoteServiceTests: XCTestCase {
         mock.register()
 
         let remoteService = ListSeriesRemoteService(session: sessionManager)
-        let result = try await remoteService.get(page: 0)
+        let result = await remoteService.get(page: 0)
 
         switch result {
         case .success(_):

@@ -25,7 +25,7 @@
 		E8983E8C277A5BD200411B6E /* SeriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E8B277A5BD200411B6E /* SeriesTests.swift */; };
 		E8983E8F277A5FDA00411B6E /* Series.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E8E277A5C3500411B6E /* Series.json */; };
 		E8983E92277B4CFE00411B6E /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = E8983E91277B4CFE00411B6E /* Mocker */; };
-		E8983E96277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */; };
+		E8983E96277B4D5400411B6E /* ListSerirsRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E95277B4D5400411B6E /* ListSerirsRemoteServiceTests.swift */; };
 		E8983E98277B51CE00411B6E /* ListSeriesMockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */; };
 		E8983E9B277B547800411B6E /* ListSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E9A277B522600411B6E /* ListSeries.json */; };
 		E8983E9E277B5B3A00411B6E /* ListSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */; };
@@ -70,7 +70,7 @@
 		E8983E7C277A58D900411B6E /* AmazeSeriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmazeSeriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8983E8B277A5BD200411B6E /* SeriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTests.swift; sourceTree = "<group>"; };
 		E8983E8E277A5C3500411B6E /* Series.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Series.json; sourceTree = "<group>"; };
-		E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriresRemoteServiceTests.swift; path = AmazeSeriesTests/Core/Domain/RawData/ListSeriresRemoteServiceTests.swift; sourceTree = SOURCE_ROOT; };
+		E8983E95277B4D5400411B6E /* ListSerirsRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSerirsRemoteServiceTests.swift; path = AmazeSeriesTests/Core/Domain/RawData/ListSerirsRemoteServiceTests.swift; sourceTree = SOURCE_ROOT; };
 		E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriesMockedData.swift; path = AmazeSeriesTests/ListSeries/Infrastructure/Mocks/ListSeriesMockedData.swift; sourceTree = SOURCE_ROOT; };
 		E8983E9A277B522600411B6E /* ListSeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ListSeries.json; path = AmazeSeriesTests/Core/Domain/RawData/ListSeries.json; sourceTree = SOURCE_ROOT; };
 		E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesInteractor.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				E8983E99277B521000411B6E /* Mocks */,
-				E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */,
+				E8983E95277B4D5400411B6E /* ListSerirsRemoteServiceTests.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8983E8C277A5BD200411B6E /* SeriesTests.swift in Sources */,
-				E8983E96277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift in Sources */,
+				E8983E96277B4D5400411B6E /* ListSerirsRemoteServiceTests.swift in Sources */,
 				E8983E98277B51CE00411B6E /* ListSeriesMockedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

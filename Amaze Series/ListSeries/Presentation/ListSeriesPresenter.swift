@@ -29,6 +29,7 @@ extension ListSeriesPresenter: ListSeriesPresenterType {
         }
     }
 }
+
 extension ListSeriesPresenter: ListSeriesInteractorDelegate {
     func onUpdate(state: ListSeriesState) {
         guard let listSeriesView = self.listSeriesView else { return }

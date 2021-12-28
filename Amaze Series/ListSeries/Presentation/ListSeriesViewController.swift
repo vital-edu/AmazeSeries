@@ -16,6 +16,9 @@ protocol ListSeriesViewControllerType: AnyObject {
 class ListSeriesViewController: UIViewController {
     private struct ViewMetrics {
         static let cellSize = CGSize(width: 170, height: 239)
+        static let sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        static let minimumLineSpacing = 5.0
+        static let minimumInteritemSpacing = 5.0
     }
 
     var presenter: ListSeriesPresenterType
@@ -24,7 +27,9 @@ class ListSeriesViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = ViewMetrics.cellSize
-        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing = ViewMetrics.minimumInteritemSpacing
+        flowLayout.minimumLineSpacing = ViewMetrics.minimumLineSpacing
+        flowLayout.sectionInset = ViewMetrics.sectionInset
 
         let collectionView = UICollectionView(
             frame: self.view.frame,
@@ -78,7 +83,7 @@ extension ListSeriesViewController: ViewConfiguration {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant:  ViewMetrics.cellSize.height),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 }
