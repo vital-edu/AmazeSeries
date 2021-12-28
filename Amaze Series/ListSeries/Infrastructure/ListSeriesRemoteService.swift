@@ -8,14 +8,18 @@
 import Foundation
 import Alamofire
 
-class ListSeriesRemoteService {
-    let session: Session
+protocol ListSeriesRemoteServiceProtocol {
+    func get(page: Int) async -> RemoteResponse<[Series]>
+}
+
+class ListSeriesRemoteService: ListSeriesRemoteServiceProtocol {
+    private let session: Session
 
     init(session: Session? = nil) {
         self.session = session ?? Session.default
     }
 
-    func get(page: Int) async throws -> RemoteResponse<[Series]> {
+    func get(page: Int) async -> RemoteResponse<[Series]> {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.tvmaze.com"

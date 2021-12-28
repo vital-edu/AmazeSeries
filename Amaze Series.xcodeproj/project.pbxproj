@@ -13,6 +13,7 @@
 		E8983E46277A36B000411B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E44277A36B000411B6E /* Main.storyboard */; };
 		E8983E48277A36B400411B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8983E47277A36B400411B6E /* Assets.xcassets */; };
 		E8983E4B277A36B400411B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E49277A36B400411B6E /* LaunchScreen.storyboard */; };
+		E8983E55277A379000411B6E /* ListSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E54277A379000411B6E /* ListSeriesRepository.swift */; };
 		E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */; };
 		E8983E61277A3ADE00411B6E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E8983E60277A3ADE00411B6E /* Alamofire */; };
 		E8983E64277A3BC700411B6E /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E63277A3BC700411B6E /* Series.swift */; };
@@ -29,6 +30,8 @@
 		E8983E96277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */; };
 		E8983E98277B51CE00411B6E /* ListSeriesMockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */; };
 		E8983E9B277B547800411B6E /* ListSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E9A277B522600411B6E /* ListSeries.json */; };
+		E8983E9E277B5B3A00411B6E /* ListSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */; };
+		E8983EA0277B668D00411B6E /* ListSeriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E9F277B668D00411B6E /* ListSeriesState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,7 @@
 		E8983E47277A36B400411B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8983E4A277A36B400411B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8983E4C277A36B400411B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8983E54277A379000411B6E /* ListSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesRepository.swift; sourceTree = "<group>"; };
 		E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesRemoteService.swift; sourceTree = "<group>"; };
 		E8983E63277A3BC700411B6E /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		E8983E65277A3C2000411B6E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriresRemoteServiceTests.swift; path = AmazeSeriesTests/Core/Domain/RawData/ListSeriresRemoteServiceTests.swift; sourceTree = SOURCE_ROOT; };
 		E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriesMockedData.swift; path = AmazeSeriesTests/ListSeries/Infrastructure/Mocks/ListSeriesMockedData.swift; sourceTree = SOURCE_ROOT; };
 		E8983E9A277B522600411B6E /* ListSeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ListSeries.json; path = AmazeSeriesTests/Core/Domain/RawData/ListSeries.json; sourceTree = SOURCE_ROOT; };
+		E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesInteractor.swift; sourceTree = "<group>"; };
+		E8983E9F277B668D00411B6E /* ListSeriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		E8983E52277A36E500411B6E /* ListSeries */ = {
 			isa = PBXGroup;
 			children = (
+				E8983E9C277B5AC200411B6E /* Application */,
 				E8983E53277A372A00411B6E /* Infrastructure */,
 			);
 			path = ListSeries;
@@ -132,6 +139,7 @@
 		E8983E53277A372A00411B6E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				E8983E54277A379000411B6E /* ListSeriesRepository.swift */,
 				E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */,
 			);
 			path = Infrastructure;
@@ -226,6 +234,15 @@
 				E8983E9A277B522600411B6E /* ListSeries.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E8983E9C277B5AC200411B6E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E9D277B5B3A00411B6E /* ListSeriesInteractor.swift */,
+				E8983E9F277B668D00411B6E /* ListSeriesState.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8983E75277A4CAB00411B6E /* RemoteResponse.swift in Sources */,
+				E8983E9E277B5B3A00411B6E /* ListSeriesInteractor.swift in Sources */,
 				E8983E66277A3C2000411B6E /* Image.swift in Sources */,
+				E8983E55277A379000411B6E /* ListSeriesRepository.swift in Sources */,
 				E8983E6E277A416A00411B6E /* SeriesEpisode.swift in Sources */,
 				E8983E68277A3CCC00411B6E /* SeriesSchedule.swift in Sources */,
 				E8983E70277A435300411B6E /* Day.swift in Sources */,
@@ -350,6 +369,7 @@
 				E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */,
 				E8983E41277A36AF00411B6E /* SceneDelegate.swift in Sources */,
 				E8983E64277A3BC700411B6E /* Series.swift in Sources */,
+				E8983EA0277B668D00411B6E /* ListSeriesState.swift in Sources */,
 				E8983E6A277A3F4600411B6E /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
