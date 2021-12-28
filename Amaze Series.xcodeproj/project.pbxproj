@@ -13,6 +13,7 @@
 		E8983E46277A36B000411B6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E44277A36B000411B6E /* Main.storyboard */; };
 		E8983E48277A36B400411B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8983E47277A36B400411B6E /* Assets.xcassets */; };
 		E8983E4B277A36B400411B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8983E49277A36B400411B6E /* LaunchScreen.storyboard */; };
+		E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */; };
 		E8983E61277A3ADE00411B6E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E8983E60277A3ADE00411B6E /* Alamofire */; };
 		E8983E64277A3BC700411B6E /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E63277A3BC700411B6E /* Series.swift */; };
 		E8983E66277A3C2000411B6E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E65277A3C2000411B6E /* Image.swift */; };
@@ -21,8 +22,13 @@
 		E8983E6E277A416A00411B6E /* SeriesEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E6D277A416A00411B6E /* SeriesEpisode.swift */; };
 		E8983E70277A435300411B6E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E6F277A435300411B6E /* Day.swift */; };
 		E8983E72277A437A00411B6E /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E71277A437A00411B6E /* Time.swift */; };
+		E8983E75277A4CAB00411B6E /* RemoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E74277A4CAB00411B6E /* RemoteResponse.swift */; };
 		E8983E8C277A5BD200411B6E /* SeriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E8B277A5BD200411B6E /* SeriesTests.swift */; };
 		E8983E8F277A5FDA00411B6E /* Series.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E8E277A5C3500411B6E /* Series.json */; };
+		E8983E92277B4CFE00411B6E /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = E8983E91277B4CFE00411B6E /* Mocker */; };
+		E8983E96277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */; };
+		E8983E98277B51CE00411B6E /* ListSeriesMockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */; };
+		E8983E9B277B547800411B6E /* ListSeries.json in Resources */ = {isa = PBXBuildFile; fileRef = E8983E9A277B522600411B6E /* ListSeries.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,7 @@
 		E8983E47277A36B400411B6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8983E4A277A36B400411B6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8983E4C277A36B400411B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeriesRemoteService.swift; sourceTree = "<group>"; };
 		E8983E63277A3BC700411B6E /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		E8983E65277A3C2000411B6E /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E8983E67277A3CCC00411B6E /* SeriesSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesSchedule.swift; sourceTree = "<group>"; };
@@ -51,9 +58,13 @@
 		E8983E6D277A416A00411B6E /* SeriesEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesEpisode.swift; sourceTree = "<group>"; };
 		E8983E6F277A435300411B6E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		E8983E71277A437A00411B6E /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		E8983E74277A4CAB00411B6E /* RemoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResponse.swift; sourceTree = "<group>"; };
 		E8983E7C277A58D900411B6E /* AmazeSeriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmazeSeriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8983E8B277A5BD200411B6E /* SeriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTests.swift; sourceTree = "<group>"; };
 		E8983E8E277A5C3500411B6E /* Series.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Series.json; sourceTree = "<group>"; };
+		E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriresRemoteServiceTests.swift; path = AmazeSeriesTests/Core/Domain/RawData/ListSeriresRemoteServiceTests.swift; sourceTree = SOURCE_ROOT; };
+		E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSeriesMockedData.swift; path = AmazeSeriesTests/ListSeries/Infrastructure/Mocks/ListSeriesMockedData.swift; sourceTree = SOURCE_ROOT; };
+		E8983E9A277B522600411B6E /* ListSeries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ListSeries.json; path = AmazeSeriesTests/Core/Domain/RawData/ListSeries.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8983E61277A3ADE00411B6E /* Alamofire in Frameworks */,
+				E8983E92277B4CFE00411B6E /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E8983E58277A396C00411B6E /* Core */,
+				E8983E52277A36E500411B6E /* ListSeries */,
 				E8983E3E277A36AF00411B6E /* AppDelegate.swift */,
 				E8983E40277A36AF00411B6E /* SceneDelegate.swift */,
 				E8983E42277A36AF00411B6E /* ViewController.swift */,
@@ -108,9 +121,26 @@
 			path = "Amaze Series";
 			sourceTree = "<group>";
 		};
+		E8983E52277A36E500411B6E /* ListSeries */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E53277A372A00411B6E /* Infrastructure */,
+			);
+			path = ListSeries;
+			sourceTree = "<group>";
+		};
+		E8983E53277A372A00411B6E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E56277A391600411B6E /* ListSeriesRemoteService.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		E8983E58277A396C00411B6E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E8983E73277A4C9200411B6E /* Infrastructure */,
 				E8983E62277A3B9300411B6E /* Domain */,
 			);
 			path = Core;
@@ -130,9 +160,18 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		E8983E73277A4C9200411B6E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E74277A4CAB00411B6E /* RemoteResponse.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		E8983E7D277A58D900411B6E /* AmazeSeriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				E8983E93277B4D2F00411B6E /* ListSeries */,
 				E8983E89277A5BB900411B6E /* Core */,
 			);
 			path = AmazeSeriesTests;
@@ -163,6 +202,32 @@
 			path = RawData;
 			sourceTree = "<group>";
 		};
+		E8983E93277B4D2F00411B6E /* ListSeries */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E94277B4D3700411B6E /* Infrastructure */,
+			);
+			path = ListSeries;
+			sourceTree = "<group>";
+		};
+		E8983E94277B4D3700411B6E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E99277B521000411B6E /* Mocks */,
+				E8983E95277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E8983E99277B521000411B6E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E8983E97277B51CE00411B6E /* ListSeriesMockedData.swift */,
+				E8983E9A277B522600411B6E /* ListSeries.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +246,7 @@
 			name = "Amaze Series";
 			packageProductDependencies = (
 				E8983E60277A3ADE00411B6E /* Alamofire */,
+				E8983E91277B4CFE00411B6E /* Mocker */,
 			);
 			productName = "Amaze Series";
 			productReference = E8983E3B277A36AF00411B6E /* Amaze Series.app */;
@@ -234,6 +300,7 @@
 			mainGroup = E8983E32277A36AF00411B6E;
 			packageReferences = (
 				E8983E5F277A3ADE00411B6E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E8983E90277B4CFD00411B6E /* XCRemoteSwiftPackageReference "Mocker" */,
 			);
 			productRefGroup = E8983E3C277A36AF00411B6E /* Products */;
 			projectDirPath = "";
@@ -260,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8983E9B277B547800411B6E /* ListSeries.json in Resources */,
 				E8983E8F277A5FDA00411B6E /* Series.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8983E75277A4CAB00411B6E /* RemoteResponse.swift in Sources */,
 				E8983E66277A3C2000411B6E /* Image.swift in Sources */,
 				E8983E6E277A416A00411B6E /* SeriesEpisode.swift in Sources */,
 				E8983E68277A3CCC00411B6E /* SeriesSchedule.swift in Sources */,
@@ -278,6 +347,7 @@
 				E8983E72277A437A00411B6E /* Time.swift in Sources */,
 				E8983E43277A36AF00411B6E /* ViewController.swift in Sources */,
 				E8983E3F277A36AF00411B6E /* AppDelegate.swift in Sources */,
+				E8983E57277A391600411B6E /* ListSeriesRemoteService.swift in Sources */,
 				E8983E41277A36AF00411B6E /* SceneDelegate.swift in Sources */,
 				E8983E64277A3BC700411B6E /* Series.swift in Sources */,
 				E8983E6A277A3F4600411B6E /* Genre.swift in Sources */,
@@ -289,6 +359,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8983E8C277A5BD200411B6E /* SeriesTests.swift in Sources */,
+				E8983E96277B4D5400411B6E /* ListSeriresRemoteServiceTests.swift in Sources */,
+				E8983E98277B51CE00411B6E /* ListSeriesMockedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 248SB9J68G;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Amaze Series/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 248SB9J68G;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Amaze Series/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,8 +641,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+		E8983E90277B4CFD00411B6E /* XCRemoteSwiftPackageReference "Mocker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/Mocker";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -578,6 +660,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8983E5F277A3ADE00411B6E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E8983E91277B4CFE00411B6E /* Mocker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8983E90277B4CFD00411B6E /* XCRemoteSwiftPackageReference "Mocker" */;
+			productName = Mocker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

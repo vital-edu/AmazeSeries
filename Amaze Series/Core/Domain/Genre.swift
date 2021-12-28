@@ -35,5 +35,5 @@ enum Genre: String, Decodable {
          thriller = "Thriller",
          travel = "Travel",
          war = "War",
-         wester = "Wester"
+         western = "Western"
 }
